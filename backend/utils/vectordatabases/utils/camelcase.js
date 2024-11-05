@@ -134,8 +134,11 @@ function camelCase(input, options) {
   if (options.pascalCase) {
     input = toUpperCase(input.charAt(0)) + input.slice(1);
   }
-
-  return postProcess(input, toUpperCase);
+  let result = postProcess(input, toUpperCase);
+  if (result === "AiAgentAssistSop"){
+    result = "AIAgentAssistSOP";
+  }
+  return result;
 }
 
 module.exports = {
